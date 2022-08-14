@@ -1,0 +1,199 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/* variables */
+:root {
+    --clr-primary-dark: hsl(158, 36%, 37%);
+    --clr-primary-dark-hover: hsl(156, 42%, 18%);
+    --clr-primary-light: hsl(30, 38%, 92%);
+
+    --clr-neutral-50: hsla(0, 4%, 37%, 0.721);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-200: hsl(228, 12%, 48%);
+    --clr-neutral-300: hsl(212, 21%, 14%);
+
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-heading: 'Fraunces', serif;
+
+    --fs-primary: 0.875rem;
+    --fs-heading: 2rem;
+
+    --line-height-base: 1.7;
+    --line-height-small: 1;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-size: var(--fs-primary);
+}
+
+/* utility classes */
+
+.font__primary {
+    font-family: var(--ff-primary);
+    font-weight: 500;
+    line-height: var(--line-height-base);
+}
+
+.font__heading {
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    font-size: var(--fs-heading);
+    line-height: var(--line-height-small);
+    color: var(--clr-neutral-300);
+}
+
+.text__light {
+    color: var(--clr-neutral-50);
+}
+
+.btn {
+    font-size: var(--fs-primary);
+    font-weight: 700;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    background: var(--clr-primary-dark);
+    color: var(--clr-neutral-100);
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+.btn:hover {
+    background: var(--clr-primary-dark-hover);
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+}
+
+/* cotent styling */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary-light);
+}
+
+.card {
+    margin: 1rem;
+    max-width: 90%;
+    background: var(--clr-neutral-100);
+    border-radius: 0.75rem;
+    -webkit-border-radius: 0.75rem;
+    -moz-border-radius: 0.75rem;
+    -ms-border-radius: 0.75rem;
+    -o-border-radius: 0.75rem;
+}
+
+.card__imgs {
+    overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0 0;
+    -webkit-border-radius: 0.5rem 0.5rem 0 0;
+    -moz-border-radius: 0.5rem 0.5rem 0 0;
+    -ms-border-radius: 0.5rem 0.5rem 0 0;
+    -o-border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.img__desktop {
+    display: none;
+}
+
+.card__body {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text__wide {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.cost {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cost__big {
+    color: var(--clr-primary-dark);
+}
+
+.cost__small--cross {
+    text-decoration: line-through;
+}
+
+/* attribution */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* responsive styling */
+
+@media (min-width:750px) {
+    .card__imgs {
+        grid-area: "img";
+    }
+
+    .card__body {
+        grid-area: "card-body";
+    }
+
+    .card {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "img card-body";
+        max-width: 70%;
+    }
+
+    .card__imgs {
+        border-radius: 0.5rem 0 0 0.5rem;
+        -webkit-border-radius: 0.5rem 0 0 0.5rem;
+        -moz-border-radius: 0.5rem 0 0 0.5rem;
+        -ms-border-radius: 0.5rem 0 0 0.5rem;
+        -o-border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .img__mobile {
+        display: none;
+    }
+
+    .img__desktop {
+        display: block;
+        min-height: 100%;
+    }
+}
+
+@media (min-width: 1260px) {
+    .card {
+        max-width: 38%;
+    }
+}
